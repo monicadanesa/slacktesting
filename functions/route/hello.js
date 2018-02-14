@@ -29,7 +29,7 @@ router.post("", function(req, res, next) {
     console.log("[INCOMING]", req.body);
 
     var boyPayload = {
-        text: "Hello , POST Master! "
+        text: "Hello , Master! "+req.body.user_name +" may i help you?"
     };
 
     if (userName != "slackbot") {
