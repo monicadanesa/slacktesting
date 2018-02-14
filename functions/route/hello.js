@@ -6,23 +6,37 @@ var router = new express.Router();
 var path    = require("path");
 
 // GET /
-router.get("", function(req, res) {
+router.get("", function(req, res, next) {
+
+    var userName = req.body.user_name;
+    console.log("[INCOMING]", req.body);
 
     var boyPayload = {
         text: "Hello , GET Master! "
     };
 
-    res.status(200).json(boyPayload)
+    if (userName != "slackbot") {
+        return res.status(200).json(boyPayload)
+    } else {
+        return res.status(200).end()
+    }
 });
 
 // GET /
-router.post("", function(req, res) {
+router.post("", function(req, res, next) {
+
+    var userName = req.body.user_name;
+    console.log("[INCOMING]", req.body);
 
     var boyPayload = {
         text: "Hello , POST Master! "
     };
 
-    res.status(200).json(boyPayload)
+    if (userName != "slackbot") {
+        return res.status(200).json(boyPayload)
+    } else {
+        return res.status(200).end()
+    }
 });
 
 
