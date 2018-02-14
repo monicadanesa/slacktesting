@@ -2,25 +2,24 @@
  * Created by ikhlasfirlana on 2/14/18.
  */
 var express = require("express");
-var bodyParser = require("body-parser");
 var router = new express.Router();
-
-// parse body
-router.use(bodyParser.urlencoded({extended: true}));
+var path    = require("path");
 
 // GET /
-router.get("/", function(req, res, next) {
+router.get("", function(req, res) {
 
-    var username = req.body.user_name;
     var boyPayload = {
-        text: 'Hello ' + username + ', '
+        text: 'Hello , Master! '
     };
 
-    if (username != 'slackbot') {
-        return res.status(200).json(boyPayload)
-    } else {
-        return res.status(200).end();
-    }
+    res.status(200).json(boyPayload)
+});
+
+
+// GET /install
+router.get("/install", function(req, res) {
+
+    res.sendFile(path.join(__dirname+'/../html/install.html'))
 });
 
 
