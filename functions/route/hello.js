@@ -9,7 +9,17 @@ var path    = require("path");
 router.get("", function(req, res) {
 
     var boyPayload = {
-        text: "Hello , Master! "
+        text: "Hello , GET Master! "
+    };
+
+    res.status(200).json(boyPayload)
+});
+
+// GET /
+router.post("", function(req, res) {
+
+    var boyPayload = {
+        text: "Hello , POST Master! "
     };
 
     res.status(200).json(boyPayload)
