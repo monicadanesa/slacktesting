@@ -9,7 +9,7 @@ var path    = require("path");
 router.get("", function(req, res) {
 
     var boyPayload = {
-        text: 'Hello , Master! '
+        text: "Hello , Master! "
     };
 
     res.status(200).json(boyPayload)
