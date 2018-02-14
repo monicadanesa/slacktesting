@@ -1,9 +1,9 @@
 var Slack = require('slack-node');
  
-webhookUri = "";
+webhookUrl = "";
  
 slack = new Slack();
-slack.setWebhook(webhookUri);
+slack.setWebhook(webhookUrl);
  
 slack.webhook({
   channel: "#general",
